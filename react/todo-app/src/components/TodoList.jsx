@@ -3,7 +3,7 @@ import TodoItem from "./TodoItem";
 
 export default function TodoList({ todos, toggleComplete, deleteTodo }) {
   return (
-    <ul>
+    <ul className="grid gap-2">
       {todos.map((todo, index) => {
         return (
           <TodoItem

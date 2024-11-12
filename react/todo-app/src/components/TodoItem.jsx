@@ -2,7 +2,7 @@ import React from "react";
 
 export default function TodoItem({ todo, toggleComplete, deleteTodo }) {
   return (
-    <li className="flex items-center justify-between">
+    <li className="flex items-center justify-between gap-10">
       <span>{todo?.text}</span>
       <div className="flex gap-2">
         <button
