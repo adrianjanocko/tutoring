@@ -25,6 +25,7 @@ export default function App() {
 
   return (
     <div className="grid place-content-center h-screen gap-4">
+      <h1>1.1</h1>
       <TodoForm addTodo={addTodo} />
       <TodoList
         todos={todos}
