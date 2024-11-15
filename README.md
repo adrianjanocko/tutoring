@@ -15,3 +15,5 @@ Each folder is categorized by the technology or framework used, with individual 
 
 1. **todo-app**
    - A basic to-do list application built with React. This project introduces students to component-based architecture, state management, and handling user interactions in React. The app allows users to add, complete, and delete tasks.
+   - *1.1 branch*
+     - This branch introduces an extended version of the basic to-do list application. It builds upon the foundations of the original `todo-app` by incorporating routing and integration with a backend API (PocketBase) for persistent data storage.
