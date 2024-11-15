@@ -1,9 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function TodoItem({ todo, toggleComplete, deleteTodo }) {
   return (
     <li className="flex items-center justify-between gap-10">
-      <span>{todo?.text}</span>
+      <Link to={`todo/${todo.id}`} state={todo} className="underline">
+        {todo?.text}
+      </Link>
       <div className="flex gap-2">
         <button
           onClick={() => toggleComplete(todo?.id)}
