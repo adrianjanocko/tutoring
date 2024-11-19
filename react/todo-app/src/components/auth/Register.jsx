@@ -26,15 +26,19 @@ export default function Register() {
   });
   const navigate = useNavigate();
 
-  const onSubmit = async (data) => {
+  async function onSubmit(data) {
     try {
-      const registerData = await registerUser(data.email, data.password);
+      const registerData = await registerUser(
+        data.email,
+        data.password,
+        data.confirmPassword
+      );
 
       if (registerData) navigate("/login");
     } catch (error) {
       console.error("Registration error:", error);
     }
-  };
+  }
 
   return (
     <div className="flex justify-center items-center">

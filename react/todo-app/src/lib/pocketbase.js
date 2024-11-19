@@ -4,12 +4,12 @@ import PocketBase from "pocketbase";
 
 const pb = new PocketBase(import.meta.env.VITE_POCKETBASE_URL);
 
-async function registerUser(email, password) {
+async function registerUser(email, password, passwordConfirm) {
   try {
     const user = await pb.collection("users").create({
       email,
       password,
-      passwordConfirm: password,
+      passwordConfirm,
     });
     return user;
   } catch (error) {

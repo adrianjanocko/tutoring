@@ -20,7 +20,7 @@ export default function Login() {
   });
   const navigate = useNavigate();
 
-  const onSubmit = async (data) => {
+  async function onSubmit(data) {
     try {
       const loginData = await loginUser(data.email, data.password);
 
@@ -28,7 +28,7 @@ export default function Login() {
     } catch (error) {
       console.error("Login error:", error);
     }
-  };
+  }
 
   return (
     <div className="flex justify-center items-center">
