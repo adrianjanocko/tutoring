@@ -6,12 +6,11 @@ const pb = new PocketBase(import.meta.env.VITE_POCKETBASE_URL);
 
 async function registerUser(email, password, passwordConfirm) {
   try {
-    const user = await pb.collection("users").create({
+    return await pb.collection("users").create({
       email,
       password,
       passwordConfirm,
     });
-    return user;
   } catch (error) {
     console.error("Error registering user:", error);
     throw error;
@@ -20,10 +19,7 @@ async function registerUser(email, password, passwordConfirm) {
 
 async function loginUser(email, password) {
   try {
-    const authData = await pb
-      .collection("users")
-      .authWithPassword(email, password);
-    return authData;
+    return await pb.collection("users").authWithPassword(email, password);
   } catch (error) {
     console.error("Error logging in:", error);
     throw error;
