@@ -6,6 +6,10 @@ This repository contains various web projects that I use to teach my students as
 
 Each folder is categorized by the technology or framework used, with individual project folders underneath. Here’s a breakdown of the current projects:
 
+### homework
+
+1. **01-team**
+
 ### html-css
 
 1. **01-portfolio**
