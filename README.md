@@ -23,3 +23,5 @@ Each folder is categorized by the technology or framework used, with individual 
      - This branch introduces an extended version of the basic to-do list application. It builds upon the foundations of the original todo-app by incorporating routing and integration with a backend API (PocketBase) for persistent data storage.
    - _1.2 branch_
      - This branch refines the extended to-do list application by enhancing user authentication and session handling. It includes dynamic updates to the UI based on authentication status.
+   - _1.3 branch_
+     - This branch focuses on refactoring the codebase to utilize React Context for better state management. It improves code organization and reusability while maintaining the same functionality.
