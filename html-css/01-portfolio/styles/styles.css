@@ -129,14 +129,17 @@ body {
   .hero--right {
     max-width: 35rem !important;
   }
-  .services {
-    justify-content: center !important;
-  }
 }
 @media (max-width: 885px) {
   html {
     /* 8px / 16px */
     font-size: 50%;
+  }
+  .services {
+    flex-wrap: wrap;
+    max-width: 80rem;
+    justify-content: center !important;
+    justify-self: center;
   }
   .work--boxes {
     grid-template-columns: repeat(2, 35rem) !important;
@@ -148,16 +151,15 @@ body {
   }
   .footer--items {
     grid-template-columns: none !important;
-    justify-content: start;
   }
   .footer--items_left {
     order: 2;
   }
-  .footer--items_right {
-    justify-self: start !important;
+  .footer--items_right input {
+    max-width: 50rem !important;
   }
 }
-@media (max-width: 640px) {
+@media (max-width: 610px) {
   .work--boxes {
     grid-template-columns: repeat(1, 40rem) !important;
     justify-content: center;
@@ -192,7 +194,7 @@ body {
 }
 @media (min-width: 640px) {
   .container {
-    max-width: 640px;
+    max-width: 700px;
   }
 }
 @media (min-width: 768px) {
@@ -225,8 +227,8 @@ body {
 }
 .nav--items {
   display: flex;
-  justify-content: space-between;
   gap: 2.4rem;
+  justify-content: space-between;
 }
 
 /*  -- HERO --  */
@@ -271,10 +273,9 @@ body {
 /*  -- SERVICES --  */
 .services {
   display: flex;
+  gap: 4.8rem;
   justify-content: space-between;
   align-items: center;
-  gap: 4.8rem;
-  flex-wrap: wrap;
 }
 .services--service {
   display: grid;
@@ -300,15 +301,12 @@ body {
 }
 .work--boxes {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 2.4rem;
+  grid-template-columns: repeat(3, 1fr);
 }
 .work--boxes_item {
   display: grid;
   gap: 2.4rem;
-}
-.work--boxes_item img {
-  width: 100%;
 }
 .work--boxes_item-info {
   display: grid;
@@ -325,8 +323,8 @@ body {
 }
 .testimonial--boxes {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 2.4rem;
+  grid-template-columns: repeat(3, 1fr);
 }
 .testimonial--boxes_item {
   display: grid;
@@ -340,8 +338,8 @@ body {
 }
 .testimonial--boxes_item-client {
   display: flex;
-  align-items: start;
   gap: 1.6rem;
+  align-items: start;
 }
 .testimonial--boxes_item-client-info .stars {
   display: flex;
@@ -356,8 +354,8 @@ body {
 }
 .footer--items {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   gap: 2.4rem;
+  grid-template-columns: repeat(2, 1fr);
 }
 .footer--items_left {
   display: grid;
@@ -371,13 +369,11 @@ body {
   gap: 2.4rem;
 }
 .footer--items_right {
-  justify-self: end;
   display: grid;
   gap: 1.2rem;
 }
 .footer--items_right input {
-  min-width: 40rem;
-  max-width: 50rem;
+  width: 100%;
   border: none;
   background-color: #f3f3f3;
   padding: 1.6rem 2.4rem;
