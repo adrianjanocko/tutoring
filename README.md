@@ -13,7 +13,7 @@ Each folder is categorized by the technology or framework used, with individual 
 ### html-css
 
 1. **01-portfolio**
-   - A simple portfolio website template, designed to introduce HTML and CSS basics. Students learn about layout structures, styling, responsive design, and basic animations.
+   - A simple portfolio website template, designed to introduce HTML and CSS basics. Students learn about layout structures, styling, and responsive design.
 
 ### react
 
