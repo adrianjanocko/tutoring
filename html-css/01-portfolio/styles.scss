@@ -104,7 +104,7 @@ button {
     - Spacing system (px)
     2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
    
-  */
+*/
 
 @mixin flex-space-between($gap: null, $align: false) {
   display: flex;
@@ -139,6 +139,7 @@ button {
 }
 
 html {
+  /* 10px / 16px = 0.625 = 62.5% */
   font-size: 62.5%;
 }
 
@@ -147,16 +148,145 @@ section {
 }
 
 body {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
   font-size: 1.6rem;
   font-family: "Epilogue", sans-serif;
 }
 
 .container {
-  max-width: 140rem;
+  padding: 3.2rem 2.4rem;
   margin: 0 auto;
+  max-width: 100%;
 }
+
+/*  -- RESPONSIVITY --  */
+
+@media (max-width: 1024px) {
+  .hero {
+    &--right {
+      max-width: 35rem !important;
+    }
+  }
+
+  .services {
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 885px) {
+  html {
+    /* 8px / 16px */
+    font-size: 50%;
+  }
+
+  .work {
+    &--boxes {
+      grid-template-columns: repeat(2, 35rem) !important;
+      justify-content: center;
+    }
+  }
+
+  .testimonial {
+    &--boxes {
+      grid-template-columns: repeat(2, 35rem) !important;
+      justify-content: center;
+    }
+  }
+
+  .footer {
+    &--items {
+      &_left {
+        order: 2;
+      }
+
+      &_right {
+        justify-self: start !important;
+      }
+
+      grid-template-columns: none !important;
+      justify-content: start;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .work {
+    &--boxes {
+      grid-template-columns: repeat(1, 40rem) !important;
+      justify-content: center;
+    }
+  }
+
+  .testimonial {
+    &--boxes {
+      grid-template-columns: repeat(1, 40rem) !important;
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 560px) {
+  .hero {
+    justify-content: center !important;
+
+    &--right {
+      display: none;
+    }
+  }
+
+  .partners {
+    &--items {
+      max-width: 40rem;
+      gap: 5.2rem;
+      justify-content: center !important;
+      justify-self: center;
+
+      li > img {
+        max-width: 10rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  html {
+    /* 7px / 16px */
+    font-size: 43.75%;
+  }
+}
+
+// RESPONSIVE CONTAINER
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 950px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
+/*  -- NAVBAR --  */
 
 .nav {
   @include flex-space-between();
@@ -170,45 +300,55 @@ body {
   }
 }
 
+/*  -- HERO --  */
+
 .hero {
-  &--container {
-    padding: 6.4rem 0;
-    @include flex-space-between-align();
+  padding-top: 12.8rem;
+  padding-bottom: 4.8rem;
+  @include flex-space-between-align();
 
-    &_left {
-      display: grid;
-      gap: 2.4rem;
+  &--left {
+    display: grid;
+    gap: 2.4rem;
 
-      span {
-        font-size: 2rem;
-      }
-
-      h1 {
-        font-size: 6.2rem;
-      }
-
-      p {
-        max-width: 50rem;
-        margin-bottom: 2.4rem;
-      }
-
-      &-cta {
-        padding: 2.4rem 6.4rem;
-        background: #2d2d2d;
-        width: fit-content;
-        color: white;
-        font-weight: 600;
-      }
+    span {
+      font-size: 2rem;
     }
-  }
 
-  &--partners {
-    @include flex-space-between-align();
+    h1 {
+      font-size: 6.2rem;
+    }
+
+    p {
+      max-width: 50rem;
+      margin-bottom: 2.4rem;
+    }
+
+    &_cta {
+      padding: 2.4rem 6.4rem;
+      background: #2d2d2d;
+      width: fit-content;
+      color: white;
+      font-weight: 600;
+    }
   }
 }
 
+/*  -- PARTNERS --  */
+
+.partners {
+  &--items {
+    @include flex-space-between-align();
+    flex-wrap: wrap;
+  }
+}
+
+/*  -- SERVICES --  */
+
 .services {
   @include flex-space-between-align();
+  gap: 4.8rem;
+  flex-wrap: wrap;
 
   &--service {
     display: grid;
@@ -226,6 +366,8 @@ body {
     }
   }
 }
+
+/*  -- WORK --  */
 
 .work {
   @include section-styles();
@@ -248,6 +390,8 @@ body {
     }
   }
 }
+
+/*  -- TESTIMONIAL --  */
 
 .testimonial {
   @include section-styles();
@@ -283,6 +427,8 @@ body {
   }
 }
 
+/*  -- FOOTER --  */
+
 .footer {
   display: grid;
   gap: 2.4rem;
@@ -310,7 +456,8 @@ body {
       gap: 1.2rem;
 
       input {
-        width: 50rem;
+        min-width: 40rem;
+        max-width: 50rem;
         border: none;
         background-color: #f3f3f3;
         padding: 1.6rem 2.4rem;
