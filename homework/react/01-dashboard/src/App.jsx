@@ -1,22 +1,17 @@
-import Hero from "./components/Hero"
-import Navigation from "./components/Navigation"
-import RightColumn from "./components/RightColumn"
+import RightColumn from "./layout/Aside";
+import Hero from "./layout/Content";
+import Navigation from "./layout/Sidebar";
 
 function App() {
-
   return (
     <div className="h-screen grid grid-cols-[20vw_1fr_20vw]">
-      <div>
-        <Navigation/>
-      </div>
-      <div>
-        <Hero/>
-      </div>
-      <div>
-        <RightColumn/>
-      </div>
+      <Navigation />
+
+      <Hero />
+
+      <RightColumn />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

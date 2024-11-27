@@ -4,37 +4,47 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
- 
+
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       fontFamily: {
-        inter: ['Inter', 'sans-serif'],
-        bebas:['Bebas Neue', 'cursive']
+        sans: ["Poppins", "sans-serif"],
       },
-      colors:{
-        basePurple:'#3629B7',
-        baseGrey:"#838383",
-        baseDarkerGrey:"#2c3e50",
-        lightGreen:'#edffef',
-        lightGreenText:"#55A55E",
-        lightPurple:"#f4f2ff",
-        lightPurpleText:"#5E5498",
-        lightBrown:"#fff2ec",
-        lightBrownText:"#9B715D",
-        chartPurple:"#3629b7",
-        chartPink:"#fbb8ff",
-        chartRed:"#ff4267",
-        fruitGreen:"#EDFFEF",
-        fruitOrange:"#fff2ec",
-        fruitPurple:"#f4f2ff",
-        bottleBlue:"#1573FF",
-        goalBlue:"#3546B1",
-        drinkGrey:"#F7F9FD"
-      }
+      colors: {
+        purple: {
+          DEFAULT: "#3629B7",
+          light: "#f4f2ff",
+          text: "#5E5498",
+          chart: "#3629b7",
+          fruit: "#F4F2FF",
+        },
+        grey: {
+          DEFAULT: "#838383",
+          darker: "#2c3e50",
+          drink: "#F7F9FD",
+        },
+        green: {
+          DEFAULT: "#55A55E",
+          light: "#edffef",
+          fruit: "#EDFFEF",
+        },
+        brown: {
+          DEFAULT: "#9B715D",
+          light: "#fff2ec",
+        },
+        blue: {
+          bottle: "#1573FF",
+          goal: "#3546B1",
+        },
+        chart: {
+          pink: "#fbb8ff",
+          red: "#ff4267",
+        },
+      },
     },
   },
   plugins: [],
-}
+};
