@@ -1,0 +1,222 @@
+/* 
+    CSS RESET
+*/
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+    9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* 
+    CUSTOM CSS 
+*/
+
+/*
+   
+  --- 01 TYPOGRAPHY SYSTEM
+   
+    - Font sizes (px)
+    10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+   
+  --- 02 WHITESPACE
+   
+    - Spacing system (px)
+    2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+   
+*/
+
+html {
+  /* 10px / 16px = 0.625 = 62.5% */
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 2rem;
+}
+
+.other-container {
+  padding: 3.2rem 2.4rem;
+  margin: 0 auto;
+  max-width: 160rem;
+  height: 100%;
+}
+
+.container {
+  padding: 3.2rem 2.4rem;
+  margin: 0 auto;
+  max-width: 130rem;
+}
+
+// NAVBAR
+.hero {
+  background: url("/assets/hero/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #101010;
+  color: white;
+
+  .nav {
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    a {
+      color: #b1b1b1;
+    }
+
+    &--list {
+      display: flex;
+      gap: 4.8rem;
+    }
+
+    &--buttons {
+      display: flex;
+      align-items: center;
+      gap: 3.2rem;
+
+      &_cta {
+        background-color: #72e484;
+        padding: 1.6rem 2.4rem;
+        border-radius: 15px;
+        color: #101010 !important;
+        font-weight: 600;
+      }
+    }
+  }
+
+  &--container {
+    padding: 9.6rem 3.2rem;
+    color: #e3e3e3;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8rem;
+
+    &_left {
+      display: grid;
+      gap: 3.2rem;
+
+      h1 {
+        color: white;
+        font-size: 5.2rem;
+      }
+
+      p {
+        max-width: 50rem;
+      }
+
+      ul {
+        display: flex;
+        gap: 2.4rem;
+      }
+
+      span {
+        display: flex;
+        align-items: center;
+        gap: 1.6rem;
+
+        strong {
+          font-weight: 400;
+          color: #68ab74;
+        }
+      }
+    }
+
+    &_right {
+      position: relative;
+
+      &-prices {
+        max-width: none;
+        width: 30rem;
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
