@@ -1,14 +1,22 @@
-import React from "react";
-import Aside from "./components/aside/Aside";
-import Content from "./components/content/Content";
-import Sidebar from "./components/sidebar/Sidebar";
+import Hero from "./components/Hero"
+import Navigation from "./components/Navigation"
+import RightColumn from "./components/RightColumn"
 
-export default function App() {
+function App() {
+
   return (
-    <div>
-      <Sidebar />
-      <Content />
-      <Aside />
+    <div className="h-screen grid grid-cols-[20vw_1fr_20vw]">
+      <div>
+        <Navigation/>
+      </div>
+      <div>
+        <Hero/>
+      </div>
+      <div>
+        <RightColumn/>
+      </div>
     </div>
-  );
+  )
 }
+
+export default App
