@@ -1,4 +1,4 @@
-import Intake from "./intake/Intake";
+import Intake from "./intakes/Intake";
 
 const intakeItems = [
   {
