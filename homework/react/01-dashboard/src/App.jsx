@@ -6,9 +6,7 @@ function App() {
   return (
     <div className="h-screen grid grid-cols-[20vw_1fr_20vw]">
       <Navigation />
-
       <Hero />
-
       <RightColumn />
     </div>
   );
