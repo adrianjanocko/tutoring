@@ -5,22 +5,19 @@ const intakeItems = [
     title: "Daily Intake",
     percentage: 80,
     milliliters: 5000,
-    bgColor: "bg-green-light",
-    textColor: "text-green",
+    className: "bg-green-light text-green",
   },
   {
     title: "Average Intake",
     percentage: 85,
     milliliters: 2500,
-    bgColor: "bg-purple-light",
-    textColor: "text-purple-text",
+    className: "bg-purple-light text-purple-text",
   },
   {
     title: "Total Intake",
     percentage: 68,
     milliliters: 17000,
-    bgColor: "bg-brown-light",
-    textColor: "text-brown",
+    className: "bg-brown-light text-brown",
   },
 ];
 
@@ -34,8 +31,7 @@ export default function Intakes() {
             title={item.title}
             percentage={item.percentage}
             milliliters={item.milliliters}
-            bgColor={item.bgColor}
-            textColor={item.textColor}
+            className={item.className}
           />
         );
       })}

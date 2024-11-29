@@ -12,7 +12,7 @@ const navItems = [
 export default function Links() {
   return (
     <div className="mt-28 grid gap-6">
-      <h1 className="text-purple">Menu</h1>
+      <span className="text-purple">Menu</span>
       <ul className="text-grey flex flex-col gap-7">
         {navItems.map((item, index) => (
           <li key={index}>

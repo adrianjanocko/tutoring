@@ -33,9 +33,9 @@ const Bottle = () => {
           className="absolute left-1 bottom-4 h-6 w-6"
         />
       </div>
-      <div className="flex items-center">
-        <h1 className="px-2 text-white">Stay Hydrated and beat heat.</h1>
-      </div>
+      <p className="px-2 text-white self-center">
+        Stay Hydrated and beat heat.
+      </p>
     </section>
   );
 };

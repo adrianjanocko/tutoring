@@ -6,7 +6,7 @@ const Hydratation = () => {
     <section className="rounded-lg border-2 py-6 px-8 grid gap-4">
       <div className="flex justify-between">
         <div className="grid gap-1">
-          <h1 className="text-grey font-medium text-xl">Hydratation Tips</h1>
+          <h2 className="text-grey font-medium text-xl">Hydratation Tips</h2>
           <p className="text-light text-sm text-grey">
             Consuming fruit juices keeps up the hydration level.
           </p>

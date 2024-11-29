@@ -4,21 +4,21 @@ const fruitData = [
   {
     name: "watermelon",
     description: "It contains 97% water in it. A good choice to stay hydrated.",
-    background: "green-fruit",
     image: "/images/content/hydratation/watermelon.png",
+    className: "bg-green-fruit",
   },
   {
     name: "oranges",
     description:
       "It contains 72% water in it. It’s tangy nature helps with skin care.",
-    background: "brown-light",
     image: "/images/content/hydratation/oranges.png",
+    className: "bg-brown-light",
   },
   {
     name: "grapes",
     description: "It contains vitamin ‘C’ which helps with retaining water.",
-    background: "purple-fruit",
     image: "/images/content/hydratation/grapes.png",
+    className: "bg-purple-fruit",
   },
 ];
 
@@ -30,8 +30,8 @@ export default function Fruits() {
           key={index}
           name={fruit.name}
           description={fruit.description}
-          background={fruit.background}
           image={fruit.image}
+          className={fruit.className}
         />
       ))}
     </div>
