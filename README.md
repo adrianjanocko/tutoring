@@ -8,12 +8,19 @@ Each folder is categorized by the technology or framework used, with individual 
 
 ### homework
 
+html-css/
+
 1. **01-team**
+
+react/
+
+1. **01-dashboard**
 
 ### html-css
 
 1. **01-portfolio**
    - A simple portfolio website template, designed to introduce HTML and CSS basics. Students learn about layout structures, styling, and responsive design.
+2. **02-unine-landing**
 
 ### react
 
@@ -25,3 +32,9 @@ Each folder is categorized by the technology or framework used, with individual 
      - This branch refines the extended to-do list application by enhancing user authentication and session handling. It includes dynamic updates to the UI based on authentication status.
    - _1.3 branch_
      - This branch focuses on refactoring the codebase to utilize React Context for better state management. It improves code organization and reusability while maintaining the same functionality.
+
+### java
+
+school/
+
+1. **01-customers-filter**
