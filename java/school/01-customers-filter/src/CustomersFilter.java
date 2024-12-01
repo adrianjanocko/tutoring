@@ -41,13 +41,13 @@ public class CustomersFilter {
                     .skip(1)
                     .map(line -> line.split(","))
                     .map(fields -> {
-                        final String meno = removeApostrophesAndTrim(fields[0]);
-                        final String telCislo = removeApostrophesAndTrim(fields[1]);
-                        final String mobilnaSluzba = removeApostrophesAndTrim(fields[2]);
-                        final String pausal = removeApostrophesAndTrim(fields[3]);
-                        final int stavUctu = removeApostrophesAndTrim(fields[4]).isEmpty() ? 0 : Integer.parseInt(removeApostrophesAndTrim(fields[4]));
+                        final String name = removeApostrophesAndTrim(fields[0]);
+                        final String phoneNumber = removeApostrophesAndTrim(fields[1]);
+                        final String mobileService = removeApostrophesAndTrim(fields[2]);
+                        final String flatRate = removeApostrophesAndTrim(fields[3]);
+                        final int balance = removeApostrophesAndTrim(fields[4]).isEmpty() ? 0 : Integer.parseInt(removeApostrophesAndTrim(fields[4]));
 
-                        return new Customer(meno, telCislo, mobilnaSluzba, pausal, stavUctu);
+                        return new Customer(name, phoneNumber, mobileService, flatRate, balance);
                     })
                     .toList();
 
@@ -55,7 +55,7 @@ public class CustomersFilter {
                 case 'h' ->
                         customers.stream().filter(customer -> "hlas".equalsIgnoreCase(customer.mobileService)).collect(Collectors.toList());
                 case 'i' ->
-                        customers.stream().filter(customer -> "internet".equalsIgnoreCase(customer.mobileService) || "internet".equalsIgnoreCase(customer.flatRate)).collect(Collectors.toList());
+                        customers.stream().filter(customer -> "internet".equalsIgnoreCase(customer.flatRate)).collect(Collectors.toList());
                 case 'f' -> customers.stream().filter(customer -> customer.balance < 0).collect(Collectors.toList());
                 case 'm' ->
                         customers.stream().filter(customer -> customer.phoneNumber.startsWith("09")).collect(Collectors.toList());
