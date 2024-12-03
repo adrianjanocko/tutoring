@@ -32,6 +32,8 @@ react/
      - This branch refines the extended to-do list application by enhancing user authentication and session handling. It includes dynamic updates to the UI based on authentication status.
    - _1.3 branch_
      - This branch focuses on refactoring the codebase to utilize React Context for better state management. It improves code organization and reusability while maintaining the same functionality.
+   - _1.4 branch_
+     - Sample implementation of Supabase instead of Pocketbase. PocketBase is sufficient for smaller or personal applications, but Supabase is ideal for more advanced and scalable applications.
 
 ### java
 
