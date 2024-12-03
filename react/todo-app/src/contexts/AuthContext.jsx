@@ -3,7 +3,7 @@ import { logout, pb } from "../lib/pocketbase";
 
 const AuthContext = createContext();
 
-export const AuthProvider = ({ children }) => {
+export default function AuthProvider({ children }) {
   const [user, setUser] = useState(pb.authStore.model);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export const AuthProvider = ({ children }) => {
       {children}
     </AuthContext.Provider>
   );
-};
+}
 
 export function useAuth() {
   const context = useContext(AuthContext);

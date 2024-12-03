@@ -4,7 +4,7 @@ import { useAuth } from "./AuthContext";
 
 const TodoContext = createContext(null);
 
-export const TodoProvider = ({ children }) => {
+export default function TodoProvider({ children }) {
   const { user } = useAuth();
   const [todos, setTodos] = useState([]);
 
@@ -72,7 +72,7 @@ export const TodoProvider = ({ children }) => {
       {children}
     </TodoContext.Provider>
   );
-};
+}
 
 export function useTodos() {
   const context = useContext(TodoContext);
