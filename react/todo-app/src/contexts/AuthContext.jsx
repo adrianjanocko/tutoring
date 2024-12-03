@@ -1,22 +1,30 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { logout, pb } from "../lib/pocketbase";
+import { logout, supabase } from "../lib/supabase";
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(pb.authStore.model);
+  const [user, setUser] = useState();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const handleAuthChange = (token, model) => setUser(model);
-    const unsubscribe = pb.authStore.onChange(handleAuthChange);
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setUser(session?.user ?? null);
+      setLoading(false);
+    });
 
-    if (!pb.authStore.isValid) logout();
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null);
+      setLoading(false);
+    });
 
-    return () => unsubscribe();
+    return () => subscription.unsubscribe();
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user, logout }}>
+    <AuthContext.Provider value={{ user, loading, logout }}>
       {children}
     </AuthContext.Provider>
   );

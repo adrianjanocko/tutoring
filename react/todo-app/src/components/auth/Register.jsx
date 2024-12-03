@@ -3,7 +3,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import * as z from "zod";
-import { registerUser } from "../../lib/pocketbase";
+import { registerUser } from "../../lib/supabase";
 
 const registerSchema = z
   .object({
@@ -28,13 +28,9 @@ export default function Register() {
 
   async function onSubmit(data) {
     try {
-      const registerData = await registerUser(
-        data.email,
-        data.password,
-        data.confirmPassword
-      );
+      const { error } = await registerUser(data.email, data.password);
 
-      if (registerData) navigate("/login");
+      if (!error) navigate("/");
     } catch (error) {
       console.error("Registration error:", error);
     }

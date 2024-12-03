@@ -1,6 +1,5 @@
-// contexts/TodoContext.tsx
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { pb } from "../lib/pocketbase";
+import { supabase } from "../lib/supabase";
 import { useAuth } from "./AuthContext";
 
 const TodoContext = createContext(null);
@@ -12,16 +11,15 @@ export const TodoProvider = ({ children }) => {
   useEffect(() => {
     if (!user) {
       setTodos([]);
-
       return;
     }
 
     const fetchTodos = async () => {
       try {
-        const todos = await pb.collection("todos").getFullList(200, {
-          filter: `user_id="${user.id}"`,
-        });
-        setTodos(todos);
+        const { data, error } = await supabase.from("todos").select("*");
+
+        if (error) throw error;
+        setTodos(data);
       } catch (error) {
         console.error("Error fetching todos:", error);
       }
@@ -32,12 +30,18 @@ export const TodoProvider = ({ children }) => {
 
   async function addTodo(text) {
     try {
-      const todo = await pb.collection("todos").create({
-        text,
-        completed: false,
-        user_id: user.id,
-      });
-      setTodos((oldTodos) => [...oldTodos, todo]);
+      const { data, error } = await supabase
+        .from("todos")
+        .insert({
+          text,
+          completed: false,
+          user_id: user.id,
+        })
+        .select();
+
+      if (error) throw error;
+
+      setTodos((oldTodos) => [...oldTodos, data[0]]);
     } catch (error) {
       console.error("Error adding todo:", error);
     }
@@ -45,7 +49,9 @@ export const TodoProvider = ({ children }) => {
 
   async function deleteTodo(id) {
     try {
-      await pb.collection("todos").delete(id);
+      const { error } = await supabase.from("todos").delete().eq("id", id);
+
+      if (error) throw error;
       setTodos((oldTodos) => oldTodos.filter((todo) => todo.id !== id));
     } catch (error) {
       console.error("Error deleting todo:", error);
@@ -54,10 +60,16 @@ export const TodoProvider = ({ children }) => {
 
   async function toggleComplete(id) {
     const todo = todos.find((t) => t.id === id);
+    if (!todo) return;
+
     try {
-      const updatedTodo = await pb.collection("todos").update(id, {
-        completed: !todo.completed,
-      });
+      const { data: updatedTodo, error } = await supabase
+        .from("todos")
+        .update({ completed: !todo.completed })
+        .eq("id", id)
+        .single();
+
+      if (error) throw error;
       setTodos((oldTodos) =>
         oldTodos.map((t) => (t.id === id ? updatedTodo : t))
       );

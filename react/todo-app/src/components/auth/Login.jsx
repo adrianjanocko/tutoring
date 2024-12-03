@@ -3,7 +3,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import * as z from "zod";
-import { loginUser } from "../../lib/pocketbase";
+import { loginUser } from "../../lib/supabase";
 
 const loginSchema = z.object({
   email: z.string().email("Invalid email address"),
@@ -22,9 +22,9 @@ export default function Login() {
 
   async function onSubmit(data) {
     try {
-      const loginData = await loginUser(data.email, data.password);
+      const { error } = await loginUser(data.email, data.password);
 
-      if (loginData) navigate("/");
+      if (!error) navigate("/");
     } catch (error) {
       console.error("Login error:", error);
     }
