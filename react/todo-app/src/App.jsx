@@ -1,16 +1,17 @@
-import React from "react";
-import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
+import { React } from "react";
+import { BrowserRouter, Link, NavLink, Route, Routes } from "react-router-dom";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/auth/PrivateRoute";
 import Register from "./components/auth/Register";
 import TodoDetail from "./components/todo/TodoDetail";
 import TodoForm from "./components/todo/TodoForm";
 import TodoList from "./components/todo/TodoList";
-import { AuthProvider, useAuth } from "./contexts/AuthContext";
-import { TodoProvider, useTodos } from "./contexts/TodoContext";
+import AuthProvider, { useAuth } from "./contexts/AuthContext";
+import TodoProvider, { useTodos } from "./contexts/TodoContext";
 
 function Navbar() {
   const { user, logout } = useAuth();
+
   const getNavClass = ({ isActive }) =>
     isActive ? "btn btn-success text-white" : "";
 
@@ -95,9 +96,9 @@ function Home() {
   ) : (
     <p>
       You must{" "}
-      <NavLink to="/login" className="underline text-green-600">
+      <Link to="/login" className="underline text-green-600">
         Login
-      </NavLink>{" "}
+      </Link>{" "}
       to see your todos.
     </p>
   );

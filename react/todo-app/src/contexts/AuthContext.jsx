@@ -3,7 +3,7 @@ import { logout, supabase } from "../lib/supabase";
 
 const AuthContext = createContext();
 
-export const AuthProvider = ({ children }) => {
+export default function AuthProvider({ children }) {
   const [user, setUser] = useState();
   const [loading, setLoading] = useState(true);
 
@@ -28,7 +28,7 @@ export const AuthProvider = ({ children }) => {
       {children}
     </AuthContext.Provider>
   );
-};
+}
 
 export function useAuth() {
   const context = useContext(AuthContext);
