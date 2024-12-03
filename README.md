@@ -40,3 +40,4 @@ react/
 school/
 
 1. **01-customers-filter**
+2. **02-tasks-sorter**
