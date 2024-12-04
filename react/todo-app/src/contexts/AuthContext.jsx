@@ -8,6 +8,7 @@ export default function AuthProvider({ children }) {
 
   useEffect(() => {
     const handleAuthChange = (token, model) => setUser(model);
+
     const unsubscribe = pb.authStore.onChange(handleAuthChange);
 
     if (!pb.authStore.isValid) logout();

@@ -6,8 +6,8 @@ import Register from "./components/auth/Register";
 import TodoDetail from "./components/todo/TodoDetail";
 import TodoForm from "./components/todo/TodoForm";
 import TodoList from "./components/todo/TodoList";
-import { AuthProvider, useAuth } from "./contexts/AuthContext";
-import { TodoProvider, useTodos } from "./contexts/TodoContext";
+import AuthProvider, { useAuth } from "./contexts/AuthContext";
+import TodoProvider, { useTodos } from "./contexts/TodoContext";
 
 function Navbar() {
   const { user, logout } = useAuth();
