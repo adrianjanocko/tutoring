@@ -60,6 +60,7 @@ export default function TodoProvider({ children }) {
 
   async function toggleComplete(id) {
     const todo = todos.find((t) => t.id === id);
+
     if (!todo) return;
 
     try {
@@ -67,11 +68,12 @@ export default function TodoProvider({ children }) {
         .from("todos")
         .update({ completed: !todo.completed })
         .eq("id", id)
-        .single();
+        .select();
 
       if (error) throw error;
+
       setTodos((oldTodos) =>
-        oldTodos.map((t) => (t.id === id ? updatedTodo : t))
+        oldTodos.map((t) => (t.id === id ? updatedTodo[0] : t))
       );
     } catch (error) {
       console.error("Error toggling complete:", error);
