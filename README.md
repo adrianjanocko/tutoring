@@ -38,8 +38,10 @@ react/
 ### java
 
 1. **01-basics**
+2. **02-user-management**
 
 school/
 
 1. **01-customers-filter**
 2. **02-tasks-sorter**
+3. **03-crypto-gui**
