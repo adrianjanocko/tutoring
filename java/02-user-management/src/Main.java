@@ -10,7 +10,7 @@ public class Main {
         final Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("=== Rezervačný systém ===");
+            System.out.println("=== Správa užívateľov ===");
             System.out.println("1. Pridať používateľa");
             System.out.println("2. Zobraziť všetkých používateľov");
             System.out.println("3. Upraviť používateľa");
