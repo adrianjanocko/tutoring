@@ -24,7 +24,7 @@ react/
 
 ### react
 
-1. **todo-app**
+1. **01-todo**
    - A basic to-do list application built with React. This project introduces students to component-based architecture, state management, and handling user interactions in React. The app allows users to add, complete, and delete tasks.
    - _1.1 branch_
      - This branch introduces an extended version of the basic to-do list application. It builds upon the foundations of the original todo-app by incorporating routing and integration with a backend API (PocketBase) for persistent data storage.
@@ -34,6 +34,10 @@ react/
      - This branch focuses on refactoring the codebase to utilize React Context for better state management. It improves code organization and reusability while maintaining the same functionality.
    - _1.4 branch_
      - Sample implementation of Supabase instead of Pocketbase. PocketBase is sufficient for smaller or personal applications, but Supabase is ideal for more advanced and scalable applications.
+
+## nextjs
+
+1. **01-blog**
 
 ### java
 
