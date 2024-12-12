@@ -6,7 +6,7 @@ This repository contains various web projects that I use to teach my students as
 
 Each folder is categorized by the technology or framework used, with individual project folders underneath. Here’s a breakdown of the current projects:
 
-### homework
+## homework
 
 html-css/
 
@@ -16,13 +16,13 @@ react/
 
 1. **01-dashboard**
 
-### html-css
+## html-css
 
 1. **01-portfolio**
    - A simple portfolio website template, designed to introduce HTML and CSS basics. Students learn about layout structures, styling, and responsive design.
 2. **02-unine-landing**
 
-### react
+## react
 
 1. **01-todo**
    - A basic to-do list application built with React. This project introduces students to component-based architecture, state management, and handling user interactions in React. The app allows users to add, complete, and delete tasks.
@@ -39,7 +39,7 @@ react/
 
 1. **01-blog**
 
-### java
+## java
 
 1. **01-basics**
 2. **02-user-management**
