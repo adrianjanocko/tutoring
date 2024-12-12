@@ -1,27 +1,17 @@
-import Container from "@/components/container";
-import Heading from "@/components/heading";
-import { getPosts } from "@/lib/posts";
+import Container from "@/components/Container";
+import Heading from "@/components/Heading";
+import { Suspense } from "react";
+import BlogLoading from "./components/BlogLoading";
+import BlogPosts from "./components/BlogPosts";
 
 export default async function BlogPage() {
-  const posts = await getPosts();
-
   return (
     <Container>
       <Heading>See our blog posts!</Heading>
 
-      <ul>
-        {posts && posts.length > 0 ? (
-          posts.map((post) => {
-            return (
-              <li key={post.id} className="list-disc">
-                {post.title}
-              </li>
-            );
-          })
-        ) : (
-          <li>No posts.</li>
-        )}
-      </ul>
+      <Suspense fallback={<BlogLoading />}>
+        <BlogPosts />
+      </Suspense>
     </Container>
   );
 }

@@ -8,7 +8,12 @@ interface ContainerProps {
 
 export default function Container({ children, className }: ContainerProps) {
   return (
-    <div className={twMerge("grid gap-4 justify-items-center", className)}>
+    <div
+      className={twMerge(
+        "grid gap-4 justify-items-center text-center",
+        className
+      )}
+    >
       {children}
     </div>
   );

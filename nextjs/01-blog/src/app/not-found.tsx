@@ -1,5 +1,5 @@
-import Container from "@/components/container";
-import Heading from "@/components/heading";
+import Container from "@/components/Container";
+import Heading from "@/components/Heading";
 import Link from "next/link";
 
 export default function NotFound() {

@@ -1,7 +1,7 @@
 "use client";
 
-import Container from "@/components/container";
-import Heading from "@/components/heading";
+import Container from "@/components/Container";
+import Heading from "@/components/Heading";
 import { useRouter } from "next/navigation";
 import { startTransition } from "react";
 
