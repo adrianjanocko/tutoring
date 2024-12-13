@@ -4,7 +4,7 @@ import { Suspense } from "react";
 import BlogLoading from "./components/BlogLoading";
 import BlogPosts from "./components/BlogPosts";
 
-export default async function BlogPage() {
+export default function BlogPage() {
   return (
     <Container>
       <Heading>See our blog posts!</Heading>
