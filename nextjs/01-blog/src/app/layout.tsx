@@ -5,8 +5,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Blog",
-    default: "My blog page",
+    template: "%s | Blogify",
+    default: "Blogify",
   },
   description: "Description of the blog website",
 };

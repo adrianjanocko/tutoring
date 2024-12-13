@@ -1,4 +1,4 @@
-export type Post = {
+export interface Post {
   id: number;
   slug: string;
   title: string;
@@ -6,4 +6,4 @@ export type Post = {
   image: string;
   category: string;
   publishedAt: Date;
-};
+}

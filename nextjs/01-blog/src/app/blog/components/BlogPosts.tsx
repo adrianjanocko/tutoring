@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default async function BlogPosts() {
-  const posts: Post[] = await getPosts({ delay: 5000 });
+  const posts: Post[] = await getPosts({ delay: 5000, limit: 4 });
 
   return (
     <ul className="grid grid-cols-2 gap-6">
