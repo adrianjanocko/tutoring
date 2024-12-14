@@ -38,7 +38,6 @@ public class TaskManager {
             }
 
             this.prioritizeTasks();
-
         } catch (final IOException e) {
             System.err.println("Error loading tasks from file: " + e.getMessage());
         }

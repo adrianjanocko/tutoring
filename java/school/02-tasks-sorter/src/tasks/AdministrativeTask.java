@@ -11,11 +11,6 @@ public class AdministrativeTask extends Task {
 
     @Override
     public void process() {
-        System.out.println("Processing administrative task: " + this.description);
-    }
-
-    public void postpone() {
-        this.dateCreated = this.dateCreated.plusDays(1);
-        System.out.println("Task postponed to: " + this.dateCreated);
+        System.out.println("Processing administrative task: " + this.getDescription());
     }
 }

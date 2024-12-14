@@ -11,10 +11,6 @@ public class ComplaintTask extends Task {
 
     @Override
     public void process() {
-        System.out.println("Processing complaint task: " + this.description);
-    }
-
-    public void cancel() {
-        System.out.println("Complaint task canceled: " + this.description);
+        System.out.println("Processing complaint task: " + this.getDescription());
     }
 }
