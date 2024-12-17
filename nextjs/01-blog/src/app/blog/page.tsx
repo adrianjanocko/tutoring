@@ -1,21 +1,27 @@
-import Container from "@/components/Container";
-import Heading from "@/components/Heading";
+import Container from "@/components/container";
+import Heading from "@/components/heading";
 import { Metadata } from "next";
 import { Suspense } from "react";
-import BlogLoading from "./components/BlogLoading";
-import BlogPosts from "./components/BlogPosts";
+import BlogPosts from "./components/blog-posts";
+import BlogLoading from "./components/blog-posts-loading";
 
 export const metadata: Metadata = {
   title: "Blog",
 };
 
-export default function BlogPage() {
+interface BlogPageProps {
+  searchParams: Promise<{ [key: string]: string | undefined }>;
+}
+
+export default async function BlogPage({ searchParams }: BlogPageProps) {
+  const sort = (await searchParams)?.sort ?? "desc";
+
   return (
     <Container>
       <Heading>See our blog posts!</Heading>
 
       <Suspense fallback={<BlogLoading />}>
-        <BlogPosts />
+        <BlogPosts sort={sort} />
       </Suspense>
     </Container>
   );

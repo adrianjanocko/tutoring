@@ -5,5 +5,5 @@ export interface Post {
   content: string;
   image: string;
   category: string;
-  publishedAt: Date;
+  publishedAt: string;
 }

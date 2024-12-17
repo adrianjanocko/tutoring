@@ -10,7 +10,7 @@ export default function Container({ children, className }: ContainerProps) {
   return (
     <div
       className={twMerge(
-        "grid gap-4 justify-items-center text-center",
+        "grid gap-6 justify-items-center text-center",
         className
       )}
     >

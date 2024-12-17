@@ -8,7 +8,7 @@ interface HeadingProps {
 
 export default function Heading({ children, className }: HeadingProps) {
   return (
-    <h1 className={twMerge("font-bold text-2xl text-center", className)}>
+    <h1 className={twMerge("font-bold text-3xl text-center", className)}>
       {children}
     </h1>
   );
