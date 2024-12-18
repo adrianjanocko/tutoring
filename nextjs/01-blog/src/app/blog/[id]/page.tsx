@@ -1,8 +1,16 @@
 import Heading from "@/components/heading";
-import { getPost } from "@/lib/actions";
+import { getPost, getPosts } from "@/lib/actions";
 import { Post } from "@/lib/types";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+
+export async function generateStaticParams() {
+  const posts: Post[] = await getPosts();
+
+  return posts.map((post) => ({
+    id: String(post.id),
+  }));
+}
 
 export default async function SeparateBlogPage({
   params,
