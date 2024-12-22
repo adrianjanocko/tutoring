@@ -1,5 +1,5 @@
-import { getPosts } from "@/lib/actions";
-import { Post } from "@/lib/types";
+import { getPosts } from "@/utils/actions";
+import { Post } from "@/utils/types";
 import Image from "next/image";
 import Link from "next/link";
 
