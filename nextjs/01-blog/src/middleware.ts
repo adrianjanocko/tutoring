@@ -8,16 +8,24 @@ export async function middleware(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  const disabledPaths = ["/login", "/register", "/blog"];
-
   const isUserLoggedIn = !!user;
   const currentPath = request.nextUrl.pathname;
 
+  const pathsToDisableForLoggedInUsers = ["/login", "/register"];
+  const pathsToDisableForLoggedOutUsers = ["/blog"];
+
   if (
     isUserLoggedIn &&
-    disabledPaths.some((path) => currentPath.startsWith(path))
+    pathsToDisableForLoggedInUsers.some((path) => currentPath.startsWith(path))
   ) {
     return Response.redirect(new URL("/", request.url));
+  }
+
+  if (
+    !isUserLoggedIn &&
+    pathsToDisableForLoggedOutUsers.some((path) => currentPath.startsWith(path))
+  ) {
+    return Response.redirect(new URL("/login", request.url));
   }
 
   return await updateSession(request);
