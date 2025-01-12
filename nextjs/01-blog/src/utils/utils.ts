@@ -9,7 +9,7 @@ export function parseDate(dateString: string): Date {
   return new Date(year, month - 1, day, hour, minute, second);
 }
 
-export async function handleResponseMessage<T>(
+export async function handleResponseMessage(
   promise: Promise<ResponseMessage>,
   onSuccess?: () => void
 ): Promise<void> {
