@@ -1,11 +1,17 @@
-import { createClient } from "@/utils/supabase/server";
-import Logout from "./logout";
+"use client";
 
-export default async function LogoutWrapper() {
-  const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+import useActionHandler from "@/hooks/useActionHandler";
+import { logoutUser } from "@/utils/supabase/actions";
+import SubmitButton from "./submit-button";
 
-  return user && <Logout />;
+export default function LogoutWrapper() {
+  const { processAction, isPending } = useActionHandler();
+
+  async function handleLogout() {
+    processAction(logoutUser(), "/");
+  }
+
+  return (
+    <SubmitButton isPending={isPending} text="Logout" onClick={handleLogout} />
+  );
 }

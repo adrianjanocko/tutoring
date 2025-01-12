@@ -1,4 +1,4 @@
-import LogoutWrapper from "@/components/logout-wrapper";
+import Logout from "@/components/logout";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Toaster } from "react-hot-toast";
@@ -43,7 +43,7 @@ export default function RootLayout({
                 <Link href="/login">Login</Link>
               </li>
               <li>
-                <LogoutWrapper />
+                <Logout />
               </li>
             </ul>
           </nav>
