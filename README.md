@@ -39,6 +39,14 @@ react/
 
 1. **01-blog**
 
+- A blog application built with Next.js. This project introduces students to how to work with both client and server components, utilizing features like dynamic routing, data fetching, and authentication.
+- _1.1 branch_
+  - This branch introduces the basic principles of how Next.js works, focusing on routing and static page generation. It also covers creating dynamic pages and how generateStaticParams is used for generating dynamic routes at build time.
+- _1.2 branch_
+  - This branch moves from using dummy data to integrating Supabase as the backend service for managing blog posts. It shows how to use Supabase for data storage and how to fetch real data from the database to display dynamic blog content.
+- _1.3 branch_
+  - This branch focuses on authentication using Supabase. It covers how to implement user authentication and manage sessions in a secure manner.
+
 ## java
 
 1. **01-basics**
