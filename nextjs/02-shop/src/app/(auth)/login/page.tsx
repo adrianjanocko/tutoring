@@ -1,13 +1,13 @@
 "use client";
 
+import AuthLayout from "@/app/(auth)/components/auth-layout";
 import Button from "@/components/button";
 import ErrorMessage from "@/components/error-message";
 import Input from "@/components/input";
-import AuthLayout from "@/components/layout/auth-layout";
 import { loginSchema } from "@/utils/schemas";
-import { loginUser } from "@/utils/supabase/actions";
 import { LoginData } from "@/utils/types";
 import { zodResolver } from "@hookform/resolvers/zod";
+import Link from "next/link";
 import { useForm } from "react-hook-form";
 
 export default function LoginPage() {
@@ -20,14 +20,9 @@ export default function LoginPage() {
     mode: "onTouched",
   });
 
-  const onSubmit = async (data: LoginData) => {
-    const result = await loginUser(data);
-    if (!result.success) {
-      console.log(result.message);
-    } else {
-      console.log("User logged:", result);
-    }
-  };
+  function onSubmit(data: LoginData) {
+    // TODO
+  }
 
   return (
     <AuthLayout
@@ -60,11 +55,7 @@ export default function LoginPage() {
             <Input type="checkbox" {...register("rememberMe")} />
             <label htmlFor="remember-me">Remember Me</label>
           </div>
-          <div>
-            <a href="#" className="mt-5">
-              Forgot Password?
-            </a>
-          </div>
+          <Link href="/">Forgot Password?</Link>
         </div>
 
         <Button type="submit">Login</Button>

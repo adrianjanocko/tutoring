@@ -1,7 +1,7 @@
 import { createClient } from "@/utils/supabase/server";
-import LogoutWrapper from "./LogoutWrapper";
+import LogoutWrapper from "./logout-wrapper";
 
-const Logout = async () => {
+export default async function Logout() {
   const supabase = await createClient();
   const {
     data: { user },
@@ -9,6 +9,4 @@ const Logout = async () => {
   } = await supabase.auth.getUser();
 
   return user && <LogoutWrapper />;
-};
-
-export default Logout;
+}

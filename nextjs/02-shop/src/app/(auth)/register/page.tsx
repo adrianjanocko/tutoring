@@ -4,12 +4,11 @@ import Button from "@/components/button";
 import ErrorMessage from "@/components/error-message";
 import Input from "@/components/input";
 import { registerSchema } from "@/utils/schemas";
-import { registerUser } from "@/utils/supabase/actions";
 import { RegisterData } from "@/utils/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
-import AuthLayout from "../../../components/layout/auth-layout";
+import AuthLayout from "../components/auth-layout";
 
 export default function RegisterPage() {
   const {
@@ -21,15 +20,9 @@ export default function RegisterPage() {
     mode: "onTouched",
   });
 
-  const onSubmit = async (data: RegisterData) => {
-    const result = await registerUser(data);
-
-    if (!result.success) {
-      console.log(result.message); // Zobraz chybovú správu
-    } else {
-      console.log("User registered:", result); // Zobraz úspešnú správu
-    }
-  };
+  function onSubmit(data: RegisterData) {
+    // TODO
+  }
 
   return (
     <AuthLayout

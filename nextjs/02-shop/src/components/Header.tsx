@@ -1,9 +1,9 @@
 import { createClient } from "@/utils/supabase/server";
 import Link from "next/link";
-import { Logo } from "./Logo";
-import Logout from "./Logout";
+import Logo from "./logo";
+import Logout from "./logout";
 
-const Header = async () => {
+export default async function Header() {
   const supabase = await createClient();
   const {
     data: { user },
@@ -12,9 +12,7 @@ const Header = async () => {
 
   return (
     <div className="flex px-10 md:px-20 py-4 justify-between items-center">
-      <div className="flex text-3xl items-center">
-        <Logo logoSize={22} /> Krist
-      </div>
+      <Logo />
       <div>
         <ul className="flex gap-6">
           <Link
@@ -57,6 +55,4 @@ const Header = async () => {
       </div>
     </div>
   );
-};
-
-export default Header;
+}
