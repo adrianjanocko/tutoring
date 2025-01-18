@@ -1,7 +1,6 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { redirect } from "next/navigation";
 import { loginSchema, registerSchema } from "../schemas";
 import { LoginData, RegisterData } from "../types";
 import { createClient } from "./server";
@@ -44,7 +43,8 @@ export async function loginUser(formData: LoginData) {
   if (error) return { success: false, message: "Login failed" };
 
   revalidatePath("/");
-  redirect("/");
+
+  return { success: true, message: "Login successful" };
 }
 
 export async function logoutUser() {
