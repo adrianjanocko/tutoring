@@ -45,6 +45,8 @@ react/
      - This branch moves from using dummy data to integrating Supabase as the backend service for managing blog posts. It shows how to use Supabase for data storage and how to fetch real data from the database to display dynamic blog content.
    - _1.3 branch_
      - This branch focuses on authentication using Supabase. It covers how to implement user authentication and manage sessions in a secure manner.
+2. **02-shop**
+   - A relatively complex, custom-built e-commerce web application featuring real functionality developed using Next.js.
 
 ## java
 
