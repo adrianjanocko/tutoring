@@ -8,11 +8,13 @@ export default function AuthLayout({
   heading,
   subheading,
   imageUrl,
+  onSubmit,
 }: {
   children: ReactNode;
   heading: string;
   subheading: string;
   imageUrl: string;
+  onSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
 }) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-[55%,45%] w-full min-h-screen">
@@ -27,6 +29,7 @@ export default function AuthLayout({
             alt="Preview Image"
             fill
             className="object-cover"
+            quality={100}
           />
         </div>
       </div>
@@ -37,7 +40,9 @@ export default function AuthLayout({
           <p className="text-grey text-md">{subheading}</p>
         </div>
 
-        {children}
+        <form className="flex flex-col gap-4 w-full" onSubmit={onSubmit}>
+          {children}
+        </form>
       </div>
     </div>
   );

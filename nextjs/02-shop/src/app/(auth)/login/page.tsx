@@ -2,7 +2,6 @@
 
 import AuthLayout from "@/app/(auth)/components/auth-layout";
 import Button from "@/components/button";
-import ErrorMessage from "@/components/error-message";
 import Input from "@/components/input";
 import { loginSchema } from "@/utils/schemas";
 import { LoginData } from "@/utils/types";
@@ -29,37 +28,35 @@ export default function LoginPage() {
       heading="Welcome 👋"
       subheading="Please login here"
       imageUrl="/images/auth/login.png"
+      onSubmit={handleSubmit(onSubmit)}
     >
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col gap-4 w-full"
-      >
-        <Input
-          label="Email Address"
-          type="text"
-          {...register("email")}
-          placeholder="Username"
-        />
-        <ErrorMessage error={errors.email} />
+      <Input
+        id="email"
+        label="Email Address"
+        type="text"
+        {...register("email")}
+        placeholder="Username"
+        error={errors.email}
+      />
 
-        <Input
-          label="Password"
-          type="password"
-          {...register("password")}
-          placeholder="Password"
-        />
-        <ErrorMessage error={errors.password} />
+      <Input
+        id="password"
+        label="Password"
+        type="password"
+        {...register("password")}
+        placeholder="Password"
+        error={errors.password}
+      />
 
-        <div className="flex justify-between items-center mb-4">
-          <div className="flex items-center gap-2">
-            <Input type="checkbox" {...register("rememberMe")} />
-            <label htmlFor="remember-me">Remember Me</label>
-          </div>
-          <Link href="/">Forgot Password?</Link>
+      <div className="flex justify-between items-center mb-4">
+        <div className="flex items-center gap-3">
+          <Input id="remember-me" type="checkbox" {...register("rememberMe")} />
+          <label htmlFor="remember-me">Remember Me</label>
         </div>
+        <Link href="/">Forgot Password?</Link>
+      </div>
 
-        <Button type="submit">Login</Button>
-      </form>
+      <Button type="submit">Login</Button>
     </AuthLayout>
   );
 }
