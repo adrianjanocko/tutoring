@@ -1,5 +1,5 @@
 import Logo from "@/components/logo";
-import { Icon } from "@iconify/react";
+import { IconHeart, IconShoppingBag, IconZoom } from "@tabler/icons-react";
 import Link from "next/link";
 import User from "./user";
 
@@ -38,9 +38,9 @@ export default async function Navbar() {
 
       <div className="flex gap-4 items-center">
         <div className="flex gap-3">
-          <Icon className="text-2xl" icon="tabler:zoom" />
-          <Icon className="text-2xl" icon="tabler:heart" />
-          <Icon className="text-2xl" icon="tabler:shopping-bag" />
+          <IconZoom className="size-6" />
+          <IconHeart className="size-6" />
+          <IconShoppingBag className="size-6" />
         </div>
 
         <User />
