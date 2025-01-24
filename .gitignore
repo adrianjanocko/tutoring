@@ -1,2 +1,5 @@
 
 react/01-todo/supabase/
+nextjs/02-shop/.env.local
+/nextjs/02-shop/node_modules
+/nextjs/02-shop/.next

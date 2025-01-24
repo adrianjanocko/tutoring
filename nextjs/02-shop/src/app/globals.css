@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .container,
+  section {
+    @apply max-w-[70rem] mx-auto;
+  }
+
+  section {
+    @apply py-20;
+  }
+
+  .container-sm {
+    @apply max-w-[92rem] mx-auto w-full;
+  }
+
+  .link {
+    @apply duration-300 transition-colors hover:text-grey no-underline;
+  }
+}
