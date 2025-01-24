@@ -12,7 +12,7 @@ export default function Logout() {
   }
 
   return (
-    <SubmitButton isPending={isPending} onClick={handleLogout}>
+    <SubmitButton size="sm" isPending={isPending} onClick={handleLogout}>
       Logout
     </SubmitButton>
   );

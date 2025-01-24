@@ -1,6 +1,6 @@
+import Logo from "@/components/logo";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
-import Logo from "../../components/logo";
 import User from "./user";
 
 export default async function Navbar() {
