@@ -79,7 +79,7 @@ export default function LoginPage() {
         <Link href="/">Forgot Password?</Link>
       </div>
 
-      <SubmitButton isPending={isPending}>Login</SubmitButton>
+      <SubmitButton disabled={isPending}>Login</SubmitButton>
     </AuthLayout>
   );
 }

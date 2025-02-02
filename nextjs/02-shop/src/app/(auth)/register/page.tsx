@@ -98,7 +98,7 @@ export default function RegisterPage() {
         <ErrorMessage error={errors.acceptTerms} />
       </div>
 
-      <SubmitButton isPending={isPending}>Signup</SubmitButton>
+      <SubmitButton disabled={isPending}>Signup</SubmitButton>
     </AuthLayout>
   );
 }

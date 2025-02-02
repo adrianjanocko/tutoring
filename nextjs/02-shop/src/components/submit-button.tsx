@@ -3,20 +3,20 @@ import Button from "./button";
 
 interface SubmitButtonProps {
   size?: "sm";
-  isPending: boolean;
+  disabled: boolean;
   children: ReactNode;
   onClick?: () => void;
 }
 
 export default function SubmitButton({
   size,
-  isPending,
+  disabled,
   children,
   onClick,
 }: SubmitButtonProps) {
   return (
-    <Button size={size} type="submit" disabled={isPending} onClick={onClick}>
-      {isPending ? (
+    <Button size={size} type="submit" disabled={disabled} onClick={onClick}>
+      {disabled ? (
         <span className="loading loading-spinner loading-sm"></span>
       ) : (
         children

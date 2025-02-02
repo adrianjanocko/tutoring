@@ -17,7 +17,7 @@ function Button({
   ...props
 }: ButtonProps) {
   const classes = twMerge(
-    "w-full p-5 text-white rounded-md hover:bg-grey duration-300",
+    "w-full p-5 text-white rounded-md hover:bg-grey duration-300 disabled:bg-grey",
     size === "sm" && "py-2 px-6",
     variant === "black" && "bg-black",
     className
